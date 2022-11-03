@@ -49,7 +49,7 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 1</h4>
           <div className="exercise" id="spotcheck-1">
-            {/* your code here */}
+            <Company name={companies[0].name} />
           </div>
         </div>
 
