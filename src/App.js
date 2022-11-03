@@ -13,6 +13,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      companies: [
+        { name: "Tesla", revenue: 140 },
+        { name: "Microsoft", revenue: 300 },
+        { name: "Google", revenue: 600 },
+      ],
+
       reservations: [
         { day: "Monday", time: 2000, name: "Earl" },
         { day: "Monday", time: 1845, name: "Ella" },
@@ -93,42 +99,56 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 6</h4>
           <div className="exercise" id="spotcheck-6">
-            {/* your code here */}
+            {this.state.companies.map((c) => (
+              <Company name={c.name} />
+            ))}
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 7</h4>
           <div className="exercise" id="spotcheck-7">
-            {/* your code here */}
+            <Calendar reservations={this.state.reservations} />
+            <Register reservations={this.state.reservations} />
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Exercise 1</h4>
           <div className="exercise" id="ex-1">
-            {/* your code here */}
+            <Hudini />
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Exercise 2</h4>
           <div className="exercise" id="ex-2">
-            {/* your code here */}
+            <Landing
+              user={this.state.user}
+              hottest={this.state.store.find((item) => item.hottest)}
+            />
+            <Home store={this.state.store} />
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Exercise 3</h4>
           <div className="exercise" id="ex-3">
-            {/* your code here */}
+            {this.state.currentPage === "Landing" ? (
+              <Landing
+                user={this.state.user}
+                hottest={this.state.store.find((item) => item.hottest)}
+              />
+            ) : (
+              <Home store={this.state.store} />
+            )}
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Exercise 4</h4>
           <div className="exercise" id="ex-4">
-            {/* your code here */}
+            <Home store={this.state.store} isDiscount={this.state.shouldDiscount}/>
           </div>
         </div>
       </div>

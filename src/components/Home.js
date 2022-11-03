@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import Item from './Item';
+import React, { Component } from "react";
+import Item from "./Item";
 
 class Home extends Component {
-
-    render() {
-        return
-        {/* your code here */ }
-
-    }
+  render() {
+    return (
+      <div>
+        {this.props.store.map((s) => (
+          <Item item={s} isDiscount={this.props.isDiscount}/>
+        ))}
+      </div>
+    );
+  }
 }
 
-export default Home
+export default Home;
