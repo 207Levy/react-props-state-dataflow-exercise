@@ -42,6 +42,8 @@ class App extends Component {
   // SPOT-CHECK-3:
   // your upperCase method here
 
+  upperCase = (name) => name.toUpperCase();
+
   render() {
     let companies = [
       { name: "Tesla", revenue: 140 },
@@ -68,21 +70,23 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 3</h4>
           <div className="exercise" id="spotcheck-3">
-            {/* your code here */}
+            {companies.map((c) => (
+              <Company name={this.upperCase(c.name)} revenue={c.revenue} />
+            ))}
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 4</h4>
           <div className="exercise" id="spotcheck-4">
-            {/* your code here */}
+            <Wardrobe />
           </div>
         </div>
 
         <div className="ex-space">
           <h4 className="ex-title">Spotcheck 5</h4>
           <div className="exercise" id="spotcheck-5">
-            {/* your code here */}
+            <Wardrobe2 />
           </div>
         </div>
 
